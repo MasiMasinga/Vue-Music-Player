@@ -1,15 +1,24 @@
-import './assets/css/base.css'
-import './assets/css/main.css'
+// CSS
+import "./assets/css/base.css";
+import "./assets/css/main.css";
 
-import { createApp } from 'vue'
-import { createPinia } from 'pinia'
+// Pinia
+import { createApp } from "vue";
+import { createPinia } from "pinia";
 
-import App from './App.vue'
-import router from './router'
+// Vue Router
+import router from "./router";
 
-const app = createApp(App)
+// Vee Validate
+import VeeValidatePlugin from "./includes/validation";
 
-app.use(createPinia())
-app.use(router)
+// Components
+import App from "./App.vue";
 
-app.mount('#app')
+const app = createApp(App);
+
+app.use(createPinia());
+app.use(router);
+app.use(VeeValidatePlugin);
+
+app.mount("#app");
