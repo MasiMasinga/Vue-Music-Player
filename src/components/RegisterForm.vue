@@ -1,71 +1,94 @@
 <template>
-    <div class="text-white text-center font-bold p-4 rounded mb-4" v-if="reg_show_alert" :class="reg_alert_variant">
+    <div
+        class="text-white text-center font-bold p-4 rounded mb-4"
+        v-if="reg_show_alert"
+        :class="reg_alert_variant"
+    >
         {{ reg_alert_message }}
     </div>
-    <vee-form  :validation-schema="schema" @submit="register" :initial-values="userData">
-        <!-- Name -->
+    <vee-form :validation-schema="schema" @submit="register" :initial-values="userData">
         <div class="mb-3">
             <label class="inline-block mb-2">Name</label>
-            <vee-field type="text" name="name"
+            <vee-field
+                type="text"
+                name="name"
                 class="block w-full py-1.5 px-3 text-gray-800 border border-gray-300 transition duration-500 focus:outline-none focus:border-black rounded"
-                placeholder="Enter Name" />
+                placeholder="Enter Name"
+            />
             <ErrorMessage class="text-red-600" name="name" />
         </div>
-        <!-- Email -->
         <div class="mb-3">
             <label class="inline-block mb-2">Email</label>
-            <vee-field type="email" name="email"
+            <vee-field
+                type="email"
+                name="email"
                 class="block w-full py-1.5 px-3 text-gray-800 border border-gray-300 transition duration-500 focus:outline-none focus:border-black rounded"
-                placeholder="Enter Email" />
+                placeholder="Enter Email"
+            />
             <ErrorMessage class="text-red-600" name="email" />
         </div>
-        <!-- Age -->
         <div class="mb-3">
             <label class="inline-block mb-2">Age</label>
-            <vee-field type="number" name="age"
-                class="block w-full py-1.5 px-3 text-gray-800 border border-gray-300 transition duration-500 focus:outline-none focus:border-black rounded" />
+            <vee-field
+                type="number"
+                name="age"
+                class="block w-full py-1.5 px-3 text-gray-800 border border-gray-300 transition duration-500 focus:outline-none focus:border-black rounded"
+            />
             <ErrorMessage class="text-red-600" name="age" />
         </div>
-        <!-- Password -->
         <div class="mb-3">
             <label class="inline-block mb-2">Password</label>
             <vee-field name="password" :bails="false" v-slot="{ field, errors }">
-                <input v-bind="field" type="password" placeholder="Password"
-                    class="block w-full py-1.5 px-3 text-gray-800 border border-gray-300 transition duration-500 focus:outline-none focus:border-black rounded" />
+                <input
+                    v-bind="field"
+                    type="password"
+                    placeholder="Password"
+                    class="block w-full py-1.5 px-3 text-gray-800 border border-gray-300 transition duration-500 focus:outline-none focus:border-black rounded"
+                />
                 <div class="text-red-600" v-for="error in errors" :key="error">
                     {{ error }}
                 </div>
             </vee-field>
             <ErrorMessage class="text-red-600" name="password" />
         </div>
-        <!-- Confirm Password -->
         <div class="mb-3">
             <label class="inline-block mb-2">Confirm Password</label>
-            <vee-field type="password" name="confirm_password"
+            <vee-field
+                type="password"
+                name="confirm_password"
                 class="block w-full py-1.5 px-3 text-gray-800 border border-gray-300 transition duration-500 focus:outline-none focus:border-black rounded"
-                placeholder="Confirm Password" />
+                placeholder="Confirm Password"
+            />
             <ErrorMessage class="text-red-600" name="confirm_password" />
         </div>
-        <!-- Country -->
         <div class="mb-3">
             <label class="inline-block mb-2">Country</label>
-            <vee-field as="select" name="country"
-                class="block w-full py-1.5 px-3 text-gray-800 border border-gray-300 transition duration-500 focus:outline-none focus:border-black rounded">
+            <vee-field
+                as="select"
+                name="country"
+                class="block w-full py-1.5 px-3 text-gray-800 border border-gray-300 transition duration-500 focus:outline-none focus:border-black rounded"
+            >
                 <option value="USA">USA</option>
                 <option value="Mexico">Mexico</option>
                 <option value="Antarctica">Antarctica</option>
             </vee-field>
             <ErrorMessage class="text-red-600" name="country" />
         </div>
-        <!-- TOS -->
         <div class="mb-3 pl-6">
-            <vee-field name="tos" value="1" type="checkbox" class="w-4 h-4 float-left -ml-6 mt-1 rounded" />
+            <vee-field
+                name="tos"
+                value="1"
+                type="checkbox"
+                class="w-4 h-4 float-left -ml-6 mt-1 rounded"
+            />
             <label class="inline-block">Accept terms of service</label>
             <ErrorMessage class="text-red-600 block" name="tos" />
         </div>
-        <button type="submit"
+        <button
+            type="submit"
             class="block w-full bg-purple-600 text-white py-1.5 px-3 rounded transition hover:bg-purple-700"
-            :disabled="reg_in_submission">
+            :disabled="reg_in_submission"
+        >
             Submit
         </button>
     </vee-form>
