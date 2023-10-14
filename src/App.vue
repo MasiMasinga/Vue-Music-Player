@@ -4,20 +4,26 @@
 
     <!-- Introduction -->
     <section class="mb-8 py-20 text-white text-center relative">
-        <div class="absolute inset-0 w-full h-full bg-contain introduction-bg"
-            style="background-image: url(assets/img/header.png)"></div>
+        <div
+            class="absolute inset-0 w-full h-full bg-contain introduction-bg"
+            style="background-image: url(assets/img/header.png)"
+        ></div>
         <div class="container mx-auto">
             <div class="text-white main-header-content">
                 <h1 class="font-bold text-5xl mb-5">Listen to Great Music!</h1>
                 <p class="w-full md:w-8/12 mx-auto">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus et dolor mollis, congue
-                    augue non, venenatis elit. Nunc justo eros, suscipit ac aliquet imperdiet, venenatis et
-                    sapien. Duis sed magna pulvinar, fringilla lorem eget, ullamcorper urna.
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus et dolor
+                    mollis, congue augue non, venenatis elit. Nunc justo eros, suscipit ac aliquet
+                    imperdiet, venenatis et sapien. Duis sed magna pulvinar, fringilla lorem eget,
+                    ullamcorper urna.
                 </p>
             </div>
         </div>
 
-        <img class="relative block mx-auto mt-5 -mb-20 w-auto max-w-full" src="/assets/img/introduction-music.png" />
+        <img
+            class="relative block mx-auto mt-5 -mb-20 w-auto max-w-full"
+            src="/assets/img/introduction-music.png"
+        />
     </section>
 
     <!-- Main Content -->
@@ -31,7 +37,8 @@
             <!-- Playlist -->
             <ol id="playlist">
                 <li
-                    class="flex justify-between items-center p-3 pl-6 cursor-pointer transition duration-300 hover:bg-gray-50">
+                    class="flex justify-between items-center p-3 pl-6 cursor-pointer transition duration-300 hover:bg-gray-50"
+                >
                     <div>
                         <a href="#" class="font-bold block text-gray-600">Song Title</a>
                         <span class="text-gray-500 text-sm">Artist Name</span>
@@ -45,7 +52,8 @@
                     </div>
                 </li>
                 <li
-                    class="flex justify-between items-center p-3 pl-6 cursor-pointer transition duration-300 hover:bg-gray-50">
+                    class="flex justify-between items-center p-3 pl-6 cursor-pointer transition duration-300 hover:bg-gray-50"
+                >
                     <div>
                         <a href="#" class="font-bold block text-gray-600">Song Title</a>
                         <span class="text-gray-500 text-sm">Artist Name</span>
@@ -59,7 +67,8 @@
                     </div>
                 </li>
                 <li
-                    class="flex justify-between items-center p-3 pl-6 cursor-pointer transition duration-300 hover:bg-gray-50">
+                    class="flex justify-between items-center p-3 pl-6 cursor-pointer transition duration-300 hover:bg-gray-50"
+                >
                     <div>
                         <a href="#" class="font-bold block text-gray-600">Song Title</a>
                         <span class="text-gray-500 text-sm">Artist Name</span>
@@ -73,7 +82,8 @@
                     </div>
                 </li>
                 <li
-                    class="flex justify-between items-center p-3 pl-6 cursor-pointer transition duration-300 hover:bg-gray-50">
+                    class="flex justify-between items-center p-3 pl-6 cursor-pointer transition duration-300 hover:bg-gray-50"
+                >
                     <div>
                         <a href="#" class="font-bold block text-gray-600">Song Title</a>
                         <span class="text-gray-500 text-sm">Artist Name</span>
@@ -87,7 +97,8 @@
                     </div>
                 </li>
                 <li
-                    class="flex justify-between items-center p-3 pl-6 cursor-pointer transition duration-300 hover:bg-gray-50">
+                    class="flex justify-between items-center p-3 pl-6 cursor-pointer transition duration-300 hover:bg-gray-50"
+                >
                     <div>
                         <a href="#" class="font-bold block text-gray-600">Song Title</a>
                         <span class="text-gray-500 text-sm">Artist Name</span>
@@ -101,7 +112,8 @@
                     </div>
                 </li>
                 <li
-                    class="flex justify-between items-center p-3 pl-6 cursor-pointer transition duration-300 hover:bg-gray-50">
+                    class="flex justify-between items-center p-3 pl-6 cursor-pointer transition duration-300 hover:bg-gray-50"
+                >
                     <div>
                         <a href="#" class="font-bold block text-gray-600">Song Title</a>
                         <span class="text-gray-500 text-sm">Artist Name</span>
@@ -115,7 +127,8 @@
                     </div>
                 </li>
                 <li
-                    class="flex justify-between items-center p-3 pl-6 cursor-pointer transition duration-300 hover:bg-gray-50">
+                    class="flex justify-between items-center p-3 pl-6 cursor-pointer transition duration-300 hover:bg-gray-50"
+                >
                     <div>
                         <a href="#" class="font-bold block text-gray-600">Song Title</a>
                         <span class="text-gray-500 text-sm">Artist Name</span>
@@ -129,7 +142,8 @@
                     </div>
                 </li>
                 <li
-                    class="flex justify-between items-center p-3 pl-6 cursor-pointer transition duration-300 hover:bg-gray-50">
+                    class="flex justify-between items-center p-3 pl-6 cursor-pointer transition duration-300 hover:bg-gray-50"
+                >
                     <div>
                         <a href="#" class="font-bold block text-gray-600">Song Title</a>
                         <span class="text-gray-500 text-sm">Artist Name</span>
@@ -143,7 +157,8 @@
                     </div>
                 </li>
                 <li
-                    class="flex justify-between items-center p-3 pl-6 cursor-pointer transition duration-300 hover:bg-gray-50">
+                    class="flex justify-between items-center p-3 pl-6 cursor-pointer transition duration-300 hover:bg-gray-50"
+                >
                     <div>
                         <a href="#" class="font-bold block text-gray-600">Song Title</a>
                         <span class="text-gray-500 text-sm">Artist Name</span>
@@ -157,7 +172,8 @@
                     </div>
                 </li>
                 <li
-                    class="flex justify-between items-center p-3 pl-6 cursor-pointer transition duration-300 hover:bg-gray-50">
+                    class="flex justify-between items-center p-3 pl-6 cursor-pointer transition duration-300 hover:bg-gray-50"
+                >
                     <div>
                         <a href="#" class="font-bold block text-gray-600">Song Title</a>
                         <span class="text-gray-500 text-sm">Artist Name</span>
@@ -171,7 +187,8 @@
                     </div>
                 </li>
                 <li
-                    class="flex justify-between items-center p-3 pl-6 cursor-pointer transition duration-300 hover:bg-gray-50">
+                    class="flex justify-between items-center p-3 pl-6 cursor-pointer transition duration-300 hover:bg-gray-50"
+                >
                     <div>
                         <a href="#" class="font-bold block text-gray-600">Song Title</a>
                         <span class="text-gray-500 text-sm">Artist Name</span>
@@ -185,7 +202,8 @@
                     </div>
                 </li>
                 <li
-                    class="flex justify-between items-center p-3 pl-6 cursor-pointer transition duration-300 hover:bg-gray-50">
+                    class="flex justify-between items-center p-3 pl-6 cursor-pointer transition duration-300 hover:bg-gray-50"
+                >
                     <div>
                         <a href="#" class="font-bold block text-gray-600">Song Title</a>
                         <span class="text-gray-500 text-sm">Artist Name</span>
@@ -199,7 +217,8 @@
                     </div>
                 </li>
                 <li
-                    class="flex justify-between items-center p-3 pl-6 cursor-pointer transition duration-300 hover:bg-gray-50">
+                    class="flex justify-between items-center p-3 pl-6 cursor-pointer transition duration-300 hover:bg-gray-50"
+                >
                     <div>
                         <a href="#" class="font-bold block text-gray-600">Song Title</a>
                         <span class="text-gray-500 text-sm">Artist Name</span>
@@ -238,7 +257,10 @@
                     <i class="fas fa-circle"></i>
                 </span>
                 <!-- Player Progress Bar-->
-                <span class="block h-2 rounded bg-gradient-to-r from-green-500 to-green-400" style="width: 50%"></span>
+                <span
+                    class="block h-2 rounded bg-gradient-to-r from-green-500 to-green-400"
+                    style="width: 50%"
+                ></span>
             </div>
             <!-- Duration -->
             <div class="player-duration">03:06</div>
@@ -250,14 +272,14 @@
 </template>
 
 <script>
-import AppHeader from './components/AppHeader.vue'
-import AppAuth from './components/AppAuth.vue'
+import AppHeader from "./components/AppHeader.vue";
+import AppAuth from "./components/AppAuth.vue";
 
 export default {
-    name: 'App',
+    name: "App",
     components: {
         AppHeader,
-        AppAuth
-    }
-}
+        AppAuth,
+    },
+};
 </script>
