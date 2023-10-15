@@ -49,7 +49,6 @@
                     {{ error }}
                 </div>
             </vee-field>
-            <ErrorMessage class="text-red-600" name="password" />
         </div>
         <div class="mb-3">
             <label class="inline-block mb-2">Confirm Password</label>
@@ -60,6 +59,18 @@
                 placeholder="Confirm Password"
             />
             <ErrorMessage class="text-red-600" name="confirm_password" />
+        </div>
+        <div class="mb-3">
+            <label class="inline-block mb-2">Account Type</label>
+            <vee-field
+                as="select"
+                name="account_type"
+                class="block w-full py-1.5 px-3 text-gray-800 border border-gray-300 transition duration-500 focus:outline-none focus:border-black rounded"
+            >
+                <option value="Listener">Listener</option>
+                <option value="Artist">Artist</option>
+            </vee-field>
+            <ErrorMessage class="text-red-600" name="account_type" />
         </div>
         <div class="mb-3">
             <label class="inline-block mb-2">Country</label>
@@ -95,6 +106,10 @@
 </template>
 
 <script>
+// Pinia
+import { mapActions } from "pinia";
+import useUserStore from "../stores/user";
+
 export default {
     name: "RegisterForm",
     data() {
@@ -105,6 +120,7 @@ export default {
                 age: "required|min_value:18|max_value:100",
                 password: "required|min:9|max:100|excluded:password",
                 confirm_password: "password_mismatch:@password",
+                account_type: "account_type",
                 country: "required|country_excluded:Antarctica",
                 tos: "tos",
             },
@@ -118,14 +134,28 @@ export default {
         };
     },
     methods: {
-        register(values) {
+        ...mapActions(useUserStore, {
+            createUser: "register",
+        }),
+        async register(values) {
             this.reg_in_submission = true;
             this.reg_show_alert = true;
             this.reg_alert_variant = "bg-blue-500";
             this.reg_alert_message = "Please wait! Your account is being created.";
 
+            try {
+                await this.createUser(values);
+            } catch (error) {
+                this.reg_in_submission = false;
+                this.reg_show_alert = true;
+                this.reg_alert_variant = "bg-red-500";
+                this.reg_alert_message = error.message;
+                return;
+            }
+
             this.reg_alert_variant = "bg-green-500";
             this.reg_alert_message = "Success! Your account has been created.";
+            window.reload();
             console.log(values);
         },
     },
