@@ -25,6 +25,7 @@ export default {
 
         defineRule("required", required);
         defineRule("tos", required);
+        defineRule("account_type", required);
         defineRule("min", min);
         defineRule("max", max);
         defineRule("alpha_spaces", alphaSpaces);
@@ -50,6 +51,7 @@ export default {
                     country_excluded: `Due to restrictions, we do not accept users from this location`,
                     password_mismatch: `The passwords don't match`,
                     tos: `You must accept the Terms of Service`,
+                    account_type: `You must select an account type`,
                 };
 
                 const message = messages[ctx.rule.name]
