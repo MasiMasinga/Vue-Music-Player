@@ -9,19 +9,19 @@ import Manage from "../views/Manage.vue";
 const routes = [
     {
         path: "/",
-        name: 'Home',
+        name: "Home",
         component: Home,
     },
     {
         path: "/about",
-        name: 'About',
+        name: "About",
         component: About,
     },
     {
         path: "/manage",
-        name: 'Manage',
+        name: "Manage",
         component: Manage,
-    }
+    },
 ];
 
 const router = createRouter({
