@@ -11,8 +11,15 @@
                         <i class="fa fa-compact-disc float-right text-green-400 text-2xl"></i>
                     </div>
                     <div class="p-6">
-                        <composition-item v-for="(song, i) in songs" :index="i" :key="song.docID" :song="song"
-                            :updateSong="updateSong" :removeSong="removeSong" :updateUnsavedFlag="updateUnsavedFlag" />
+                        <composition-item
+                            v-for="(song, i) in songs"
+                            :index="i"
+                            :key="song.docID"
+                            :song="song"
+                            :updateSong="updateSong"
+                            :removeSong="removeSong"
+                            :updateUnsavedFlag="updateUnsavedFlag"
+                        />
                     </div>
                 </div>
             </div>
@@ -23,10 +30,10 @@
 <script>
 // Components
 import AppUpload from "../components/AppUpload.vue";
-import CompositionItem from '../components/CompositionItem.vue';
+import CompositionItem from "../components/CompositionItem.vue";
 
 // Firebase
-import { auth, songsCollection } from '../includes/firebase'
+import { auth, songsCollection } from "../includes/firebase";
 
 // import useUserStore from "@/stores/user";
 
@@ -40,8 +47,8 @@ export default {
         };
     },
     async created() {
-        const snapshot = await songsCollection.where('uid', '==', auth.currentUser.uid).get();
-        snapshot.forEach(this.addSong)
+        const snapshot = await songsCollection.where("uid", "==", auth.currentUser.uid).get();
+        snapshot.forEach(this.addSong);
     },
     methods: {
         updateSong(i, values) {
@@ -54,7 +61,7 @@ export default {
         addSong(document) {
             const song = {
                 ...document.data(),
-                docID: document.id
+                docID: document.id,
             };
 
             this.songs.push(song);
@@ -67,7 +74,9 @@ export default {
         if (!this?.unsavedFlag) {
             next();
         } else {
-            const leave = window.confirm('You have unsaved changes. Are you sure you want to leave?');
+            const leave = window.confirm(
+                "You have unsaved changes. Are you sure you want to leave?"
+            );
             next(leave);
         }
     },

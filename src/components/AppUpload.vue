@@ -61,7 +61,7 @@ export default {
                 }
 
                 const storageRef = storage.ref();
-                const songsRef = storageRef.child(`songs/${file.name}`); 
+                const songsRef = storageRef.child(`songs/${file.name}`);
                 const task = songsRef.put(file);
 
                 const uploadIndex =
