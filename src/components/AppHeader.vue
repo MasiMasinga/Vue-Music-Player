@@ -1,8 +1,11 @@
 <template>
     <header id="header" class="bg-gray-700">
         <nav class="container mx-auto flex justify-start items-center py-5 px-4">
-            <router-link class="text-white font-bold uppercase text-2xl mr-4" exact-active-class="no-active"
-                :to="{ name: 'Home' }">
+            <router-link
+                class="text-white font-bold uppercase text-2xl mr-4"
+                exact-active-class="no-active"
+                :to="{ name: 'Home' }"
+            >
                 Music
             </router-link>
             <div class="flex flex-grow items-center">
@@ -13,11 +16,15 @@
                         </router-link>
                     </li>
                     <li v-if="!userStore.userLoggedIn">
-                        <a class="px-2 text-white" href="#" @click.prevent="toggleAuthModal">Login / Register</a>
+                        <a class="px-2 text-white" href="#" @click.prevent="toggleAuthModal"
+                            >Login / Register</a
+                        >
                     </li>
                     <template v-else>
                         <li>
-                            <router-link class="px-2 text-white" :to="{ name: 'Manage' }">Manage</router-link>
+                            <router-link class="px-2 text-white" :to="{ name: 'Manage' }"
+                                >Manage</router-link
+                            >
                         </li>
                         <li @click.prevent="signOut">
                             <a class="px-2 text-white" href="#">Logout</a>
