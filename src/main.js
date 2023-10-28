@@ -15,6 +15,9 @@ import router from "./router";
 // Vee Validate
 import VeeValidatePlugin from "./includes/validation";
 
+// Directives
+import Icon from './directives/icon'
+
 // Components
 import App from "./App.vue";
 
@@ -27,6 +30,7 @@ auth.onAuthStateChanged(() => {
         app.use(createPinia());
         app.use(router);
         app.use(VeeValidatePlugin);
+        app.directive('icon', Icon)
 
         app.mount("#app");
     }
