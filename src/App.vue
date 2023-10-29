@@ -14,7 +14,7 @@
 // Components
 import AppHeader from "./components/AppHeader.vue";
 import AppAuth from "./components/AppAuth.vue";
-import AppPlayer from './components/Player.vue'
+import AppPlayer from "./components/Player.vue";
 
 // Pinia
 import { mapWritableState } from "pinia";
@@ -28,7 +28,7 @@ export default {
     components: {
         AppHeader,
         AppAuth,
-        AppPlayer
+        AppPlayer,
     },
     computed: {
         ...mapWritableState(useUserStore, ["userLoggedIn"]),

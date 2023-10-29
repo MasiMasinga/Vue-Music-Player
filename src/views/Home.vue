@@ -1,27 +1,34 @@
 <template>
     <main>
         <section class="mb-8 py-20 text-white text-center relative">
-            <div class="absolute inset-0 w-full h-full bg-contain introduction-bg"
-                style="background-image: url(assets/img/header.png)"></div>
+            <div
+                class="absolute inset-0 w-full h-full bg-contain introduction-bg"
+                style="background-image: url(assets/img/header.png)"
+            ></div>
             <div class="container mx-auto">
                 <div class="text-white main-header-content">
                     <h1 class="font-bold text-5xl mb-5">Listen to Great Music!</h1>
                     <p class="w-full md:w-8/12 mx-auto">
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus et dolor
-                        mollis, congue augue non, venenatis elit. Nunc justo eros, suscipit ac aliquet
-                        imperdiet, venenatis et sapien. Duis sed magna pulvinar, fringilla lorem eget,
-                        ullamcorper urna.
+                        mollis, congue augue non, venenatis elit. Nunc justo eros, suscipit ac
+                        aliquet imperdiet, venenatis et sapien. Duis sed magna pulvinar, fringilla
+                        lorem eget, ullamcorper urna.
                     </p>
                 </div>
             </div>
 
-            <img class="relative block mx-auto mt-5 -mb-20 w-auto max-w-full" src="/assets/img/introduction-music.png" />
+            <img
+                class="relative block mx-auto mt-5 -mb-20 w-auto max-w-full"
+                src="/assets/img/introduction-music.png"
+            />
         </section>
 
         <section class="container mx-auto">
             <div class="bg-white rounded border border-gray-200 relative flex flex-col">
-                <div class="px-6 pt-6 pb-5 font-bold border-b border-gray-200"
-                    v-icon-secondary="{ icon: 'headphones-alt', right: true }">
+                <div
+                    class="px-6 pt-6 pb-5 font-bold border-b border-gray-200"
+                    v-icon-secondary="{ icon: 'headphones-alt', right: true }"
+                >
                     <span class="card-title">Songs</span>
                 </div>
                 <ol id="playlist">
@@ -34,14 +41,13 @@
 
 <script>
 // Firebase
-import { songsCollection } from '../includes/firebase'
+import { songsCollection } from "../includes/firebase";
 
 // Components
-import SongItem from '../components/SongItem.vue'
+import SongItem from "../components/SongItem.vue";
 
 // Directives
 import IconSecondary from "../directives/icon-secondary";
-
 
 export default {
     name: "Home",
@@ -53,25 +59,25 @@ export default {
         return {
             songs: [],
             maxPerPage: 3,
-            pendingRequest: false
-        }
+            pendingRequest: false,
+        };
     },
     async created() {
-        this.getSongs()
+        this.getSongs();
 
-        window.addEventListener('scroll', this.handleScroll)
+        window.addEventListener("scroll", this.handleScroll);
     },
     beforeMount() {
-        window.removeEventListener('scroll', this.handleScroll)
+        window.removeEventListener("scroll", this.handleScroll);
     },
     methods: {
         handleScroll() {
-            const { scrollTop, offsetHeight } = document.documentElement
+            const { scrollTop, offsetHeight } = document.documentElement;
             const { innerHeight } = window;
             const bottomWindow = Math.random(scrollTop) + innerHeight === offsetHeight;
 
             if (bottomWindow) {
-                console.log('bottomWindow')
+                console.log("bottomWindow");
             }
         },
         async getSongs() {
@@ -83,28 +89,30 @@ export default {
 
             let snapshots;
             if (this.song?.length) {
-                const lastDoc = await songsCollection.doc(this.songs[this.songs.length - 1].docID).get();
+                const lastDoc = await songsCollection
+                    .doc(this.songs[this.songs.length - 1].docID)
+                    .get();
                 snapshots = await songsCollection
-                    .orderBy('modified_name')
+                    .orderBy("modified_name")
                     .startAfter(lastDoc)
                     .limit(this.maxPerPage)
-                    .get()
+                    .get();
             } else {
                 snapshots = await songsCollection
-                    .orderBy('modified_name')
+                    .orderBy("modified_name")
                     .limit(this.maxPerPage)
-                    .get()
+                    .get();
             }
 
-            snapshots.forEach(document => {
+            snapshots.forEach((document) => {
                 this.songs.push({
                     docID: document.id,
-                    ...document.data()
-                })
+                    ...document.data(),
+                });
             });
 
             this.pendingRequest = false;
-        }
-    }
-}
+        },
+    },
+};
 </script>

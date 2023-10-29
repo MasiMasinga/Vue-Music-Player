@@ -12,8 +12,15 @@
                             <i class="fa fa-compact-disc float-right text-green-400 text-2xl"></i>
                         </div>
                         <div class="p-6">
-                            <composition-item v-for="(song, i) in songs" :index="i" :key="song.docID" :song="song"
-                                :updateSong="updateSong" :removeSong="removeSong" :updateUnsavedFlag="updateUnsavedFlag" />
+                            <composition-item
+                                v-for="(song, i) in songs"
+                                :index="i"
+                                :key="song.docID"
+                                :song="song"
+                                :updateSong="updateSong"
+                                :removeSong="removeSong"
+                                :updateUnsavedFlag="updateUnsavedFlag"
+                            />
                         </div>
                     </div>
                 </div>
